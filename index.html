@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procedural 3D Block Wall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Procedural Wall Study</p>
+        <h1>3D Block Wall Renderer</h1>
+      </header>
+
+      <main class="workspace">
+        <section class="controls-card">
+          <div class="panel-header">
+            <h2>Controls</h2>
+          </div>
+
+          <div class="controls-grid">
+            <label class="control control-wide">
+              <span>Matrix input</span>
+              <textarea
+                id="matrixInput"
+                rows="10"
+                spellcheck="false"
+                placeholder="Paste rows of numbers separated by spaces"
+              ></textarea>
+            </label>
+
+            <label class="control">
+              <span>Cell size</span>
+              <input id="cellSize" type="range" min="28" max="74" step="2" />
+              <output id="cellSizeValue"></output>
+            </label>
+
+            <label class="control">
+              <span>Gap</span>
+              <input id="gap" type="range" min="0" max="12" step="1" />
+              <output id="gapValue"></output>
+            </label>
+
+            <label class="control">
+              <span>Depth scale</span>
+              <input id="depthScale" type="range" min="8" max="28" step="1" />
+              <output id="depthScaleValue"></output>
+            </label>
+
+            <label class="control">
+              <span>Corner radius</span>
+              <input id="radius" type="range" min="0" max="8" step="1" />
+              <output id="radiusValue"></output>
+            </label>
+
+            <label class="control">
+              <span>Theme</span>
+              <select id="theme"></select>
+            </label>
+
+            <label class="control">
+              <span>Animation</span>
+              <select id="animationPreset"></select>
+            </label>
+          </div>
+
+          <div class="button-row">
+            <button id="renderButton" class="button button-primary">
+              Render pattern
+            </button>
+            <button id="randomizeButton" class="button">Randomize</button>
+            <button id="replayButton" class="button">Replay animation</button>
+          </div>
+
+          <p id="statusMessage" class="status-message" aria-live="polite"></p>
+        </section>
+
+        <section class="preview-card">
+          <div class="preview-header">
+            <h2>Preview</h2>
+            <p>Responsive SVG output with faux depth, shading, and shadow.</p>
+          </div>
+          <div id="app" class="render-stage" aria-label="3D block wall preview"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
