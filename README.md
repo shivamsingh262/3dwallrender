@@ -2,6 +2,8 @@
 
 A small frontend hobby project that turns a 2D numeric array into a faux-3D square block wall using plain HTML, CSS, JavaScript, SVG, and anime.js.
 
+**Live demo: [3dwallrender.vercel.app](https://3dwallrender.vercel.app/)**
+
 ## What It Does
 
 The renderer accepts a matrix like:
